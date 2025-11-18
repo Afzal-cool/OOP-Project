@@ -5,5 +5,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.posapp.data.BillItem
 import com.posapp.data.databinding.ItemBillBinding
-public class BillAdapter {
-}
+class BillAdapter(
+        private var items: MutableList<BillItem>,
+        private val onRemoveClicked: (BillItem, Int) -> Unit,
+private val onAddClicked: (BillItem, Int) -> Unit
+) : RecyclerView.Adapter<BillAdapter.BillViewHolder>()
