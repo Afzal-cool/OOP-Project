@@ -1,9 +1,28 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Base.Theme.PosApp" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="android:windowBackground">@drawable/background_gradient</item>
+        <item name="android:src">@drawable/logo_hp</item>
+        <item name="layout_anchorGravity">center</item>
+
     </style>
 
     <style name="Theme.PosApp" parent="Base.Theme.PosApp" />
+    <style name="Theme.SplashScreen.PosApp">
+        <item name="android:windowBackground">@drawable/splash_background</item>
+        <item name="android:windowSplashScreenAnimationDuration">1000</item>
+        <item name="android:windowSplashScreenBrandingImage">@drawable/logo_hp</item>
+
+    </style>
+    <style name="CustomAlertDialogTheme" parent="Theme.MaterialComponents.Light.Dialog.Alert">
+        <item name="colorPrimary">@color/purple_500</item>
+        <item name="android:windowBackground">@drawable/dialog_background</item>
+        <item name="android:windowMinWidthMajor">90%</item>
+        <item name="android:windowMinWidthMinor">90%</item>
+    </style>
+    <style name="Theme.POSApp.Splash" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Background: can be a gradient or logo drawable -->
+        <item name="android:windowBackground">@drawable/logo_hp</item>
+    </style>
+
 </resources>

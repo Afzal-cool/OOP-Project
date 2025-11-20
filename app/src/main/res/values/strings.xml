@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">PosApp</string>
+    <string name="confirm_generate_bill"><![CDATA[Confirm & Generate Bill (PDF)]]></string>
+    <string name="product_name">Product Name</string>
+    <string name="_9_99">$9.99</string>
+    <string name="stock_100">Stock: 100</string>
+    <string name="item_name">Item Name</string>
+    <string name="save">SAVE</string>
+    <string name="admin_pos_system">ADMIN POS SYSTEM</string>
+    <string name="pos_admin_panel">POS Admin Panel</string>
+    <string name="don_t_have_an_account_sign_up">Don\'t have an account</string>
+    <string name="login">LOGIN</string>
+    <string name="forgot_password">Forgot password</string>
+    <string name="password">Enter password</string>
+    <string name="username_or_email">Enter username or email\n</string>
+    <string name="welcome_message">LOGIN TO CONTINUE</string>
+    <string name="login_illustration">Log in here</string>
 </resources>
