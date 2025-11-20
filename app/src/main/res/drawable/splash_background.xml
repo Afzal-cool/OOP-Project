@@ -1,0 +1,18 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Gradient background -->
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:startColor="#6A0DAD"
+                android:endColor="#D9B3FF"
+                android:angle="45"/>
+        </shape>
+    </item>
+
+    <!-- Optional: Logo in center -->
+    <item android:gravity="center">
+        <bitmap
+            android:src="@drawable/logo_hp"
+            android:gravity="center"/>
+    </item>
+</layer-list>

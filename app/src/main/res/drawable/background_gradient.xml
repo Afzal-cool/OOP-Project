@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Base gradient -->
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:startColor="#6A0DAD"
+                android:centerColor="#D9B3FF"
+                android:endColor="#EDE0F7"
+                android:angle="135" />
+        </shape>
+    </item>
+
+    <!-- Optional subtle overlay for "crispy" effect -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#33FFFFFF" /> <!-- White with 20% opacity overlay -->
+        </shape>
+    </item>
+
+</layer-list>

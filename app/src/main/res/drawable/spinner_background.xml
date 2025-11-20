@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Main rectangle with rounded corners and border -->
+    <item>
+        <shape android:shape="rectangle">
+            <corners android:radius="8dp"/>
+            <solid android:color="#FFFFFF"/>
+            <stroke
+                android:width="2dp"
+                android:color="#CCCCCC"/>
+        </shape>
+    </item>
+    <!-- Down arrow icon positioned to the right -->
+    <item android:gravity="end|center_vertical" android:right="10dp">
+        <bitmap android:src="@android:drawable/arrow_down_float" android:tint="#555555"/>
+    </item>
+</layer-list>
