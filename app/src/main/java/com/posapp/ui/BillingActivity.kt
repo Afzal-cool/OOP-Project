@@ -142,7 +142,7 @@ class BillingActivity : AppCompatActivity() {
     private fun showConfirmationDialog() {
         AlertDialog.Builder(this)
             .setTitle("Confirm Bill")
-            .setMessage("Confirm sale of ${currentBill.size} items.\nGenerate PDF receipt")
+            .setMessage("Confirm sale of ${currentBill.size} items.\n Generate PDF receipt")
             .setPositiveButton("Confirm") { _, _ ->
                 generatePdfBill()
                 resetBill()
@@ -160,7 +160,7 @@ class BillingActivity : AppCompatActivity() {
         Toast.makeText(this, "Sale complete!", Toast.LENGTH_SHORT).show()
     }
 
-    // pdf generate
+    // ---------------- PDF GENERATION -------------------
 
     private fun generatePdfBill() {
         val doc = PdfDocument()
@@ -206,8 +206,7 @@ class BillingActivity : AppCompatActivity() {
         y += 20
 
         // --- BILL ITEMS ---
-        paint.textSize = 18f
-        paint.isFakeBoldText = false
+        paint.textSize = 14f
         paint.color = 0xFF000000.toInt()
         for ((index, item) in currentBill.withIndex()) {
             // Alternate row shading for modern look
@@ -217,7 +216,6 @@ class BillingActivity : AppCompatActivity() {
             }
 
             paint.color = 0xFF000000.toInt()
-
             canvas.drawText("${item.name}", x, y, paint)
             canvas.drawText("x${item.quantity}", 300f, y, paint)
             canvas.drawText("Rs.${item.price * item.quantity}", 450f, y, paint)

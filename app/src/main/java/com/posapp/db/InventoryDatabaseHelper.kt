@@ -1,8 +1,5 @@
 package com.posapp.db
 
-class InventoryDatabaseHelper {
-}package com.posapp.db
-
 import android.content.ContentValues
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
@@ -93,7 +90,7 @@ class InventoryDatabaseHelper(context: Context) :
                     val name = it.getString(it.getColumnIndexOrThrow(KEY_NAME))
                     val price = it.getDouble(it.getColumnIndexOrThrow(KEY_PRICE))
                     val stock = it.getInt(it.getColumnIndexOrThrow(KEY_STOCK))
-                    itemList.add(InventoryItem(id, name, price, stock))
+                    itemList.add(InventoryItem(name, price, stock, id))
                 } while (it.moveToNext())
             }
         }

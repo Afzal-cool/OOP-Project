@@ -16,7 +16,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Current Stock "
+            android:text="@string/current_stock"
             android:textSize="20sp"
             android:textStyle="bold"
             android:padding="8dp"
@@ -42,7 +42,7 @@
         android:layout_margin="16dp"
         android:backgroundTint="#28A745"
         app:tint="@android:color/white"
-        android:contentDescription="Add New Item"
+        android:contentDescription="@string/add_new_item"
         app:srcCompat="@android:drawable/ic_input_add" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
