@@ -57,20 +57,28 @@
                 android:id="@+id/btnAdd"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:src="@android:drawable/ic_menu_add"
+                android:src="@drawable/ic_add"
                 android:contentDescription="Add to the Bill"
                 android:background="?attr/selectableItemBackgroundBorderless"
-                android:tint="#DC3545"/>
+                app:tint="#DC3545" />
+            <ImageButton
+                android:id="@+id/btnMin"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_remove"
+                android:contentDescription="Minus 1 from the Bill"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                app:tint="#DC3545" />
 
             <!-- Remove Button -->
             <ImageButton
                 android:id="@+id/btnRemove"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:src="@android:drawable/ic_menu_close_clear_cancel"
+                android:src="@drawable/ic_delete"
                 android:contentDescription="Remove from Bill"
                 android:background="?attr/selectableItemBackgroundBorderless"
-                android:tint="#DC3545"/>
+                app:tint="#DC3545" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 

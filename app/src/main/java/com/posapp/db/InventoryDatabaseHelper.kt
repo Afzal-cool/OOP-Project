@@ -59,7 +59,7 @@ class InventoryDatabaseHelper(context: Context) :
         db.close()
         return rowsAffected
     }
-    fun updateStock(id: Int, newStock: Int) {
+    fun updateStock(id: Long, newStock: Int) {
         val db = writableDatabase
         val values = ContentValues().apply {
             put("stock", newStock)

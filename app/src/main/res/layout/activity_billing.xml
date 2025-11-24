@@ -9,7 +9,6 @@
     android:background="#F5F7FA"
     tools:context="com.posapp.ui.BillingActivity">
 
-    <!-- Item Selection Section -->
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

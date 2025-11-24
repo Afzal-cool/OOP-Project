@@ -9,7 +9,8 @@ import com.posapp.data.databinding.ItemBillBinding
 class BillAdapter(
     private var items: MutableList<BillItem>,
     private val onRemoveClicked: (BillItem, Int) -> Unit,
-    private val onAddClicked: (BillItem, Int) -> Unit
+    private val onAddClicked: (BillItem, Int) -> Unit,
+    private val onMinClicked: (BillItem, Int) -> Unit
 ) : RecyclerView.Adapter<BillAdapter.BillViewHolder>() {
 
     inner class BillViewHolder(private val binding: ItemBillBinding) :
@@ -20,6 +21,10 @@ class BillAdapter(
             binding.tvBillItemName.text = item.name
             binding.tvBillItemQuantity.text = "Qty: ${item.quantity}"
             binding.tvBillItemPrice.text = "Rs.${item.price * item.quantity}"
+
+            binding.btnMin.setOnClickListener {
+                onMinClicked(item, position)
+            }
 
             binding.btnRemove.setOnClickListener {
                 onRemoveClicked(item, position)

@@ -6,9 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.posapp.data.InventoryItem
 import com.posapp.data.databinding.ItemInventoryBinding
 
-/**
- * Adapter for displaying the list of inventory items.
- */
+
 class InventoryAdapter(
     private val items: List<InventoryItem>,
     private val onEditClicked: (InventoryItem) -> Unit,

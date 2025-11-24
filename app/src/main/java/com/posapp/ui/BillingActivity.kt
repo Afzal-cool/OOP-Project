@@ -68,12 +68,9 @@ class BillingActivity : AppCompatActivity() {
     private fun setupRecyclerView() {
         billAdapter = BillAdapter(
             currentBill,
-            onRemoveClicked = { item, position ->
-                removeItemFromBill(item, position)
-            },
-            onAddClicked = { item, position ->
-                addQuantity(item, position)
-            }
+            onRemoveClicked = { item, position -> removeItemFromBill(item, position) },
+            onAddClicked = { item, position -> addQuantity(item, position) },
+            onMinClicked = { item, position -> reduceQuantity(item, position) } // NEW
         )
 
         binding.rvBillItems.layoutManager = LinearLayoutManager(this)
@@ -118,6 +115,30 @@ class BillingActivity : AppCompatActivity() {
         updateTotalDisplay()
     }
 
+    private fun reduceQuantity(item: BillItem, position: Int) {
+        val stockItem = inventoryList.find { it.id == item.id } ?: return
+
+        if (currentBill[position].quantity > 1) {
+            // Decrease quantity by 1
+            currentBill[position].quantity--
+            // Return 1 item to stock
+            stockItem.stock++
+            dbHelper.updateStock(stockItem.id, stockItem.stock)
+        } else {
+            // Quantity is 1, remove the item completely
+            currentBill.removeAt(position)
+            // Return 1 item to stock
+            stockItem.stock++
+            dbHelper.updateStock(stockItem.id, stockItem.stock)
+        }
+
+        // Refresh spinner and RecyclerView
+        setupInventorySpinner()
+        billAdapter.updateList(currentBill)
+        updateTotalDisplay()
+    }
+
+
     private fun removeItemFromBill(item: BillItem, position: Int) {
         reduceStock(item.id.toInt(), -item.quantity)
         currentBill.removeAt(position)
@@ -130,7 +151,7 @@ class BillingActivity : AppCompatActivity() {
         val item = inventoryList.find { it.id.toInt() == id } ?: return
         item.stock -= amount
 
-        dbHelper.updateStock(id, item.stock)
+        dbHelper.updateStock(id.toLong(), item.stock)
         setupInventorySpinner() // refresh spinner names
     }
 
@@ -172,8 +193,8 @@ class BillingActivity : AppCompatActivity() {
         val headerPaint = Paint()
         val linePaint = Paint()
 
-        val purple = 0xFF6A0DAD.toInt() // deep purple
-        val lightPurple = 0xFFEDE0F7.toInt() // very light purple for header background
+        val purple = 0xFF6A0DAD.toInt()
+        val lightPurple = 0xFFEDE0F7.toInt()
 
         var y = 50f
         val x = 50f

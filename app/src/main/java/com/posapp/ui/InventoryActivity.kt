@@ -13,9 +13,7 @@ import com.posapp.data.databinding.DialogInventoryCrudBinding
 import com.posapp.db.InventoryDatabaseHelper
 
 
-/**
- * Handles the CRUD operations and real-time viewing of the inventory stock.
- */
+
 class InventoryActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityInventoryBinding
@@ -36,7 +34,7 @@ class InventoryActivity : AppCompatActivity() {
         loadInventory()
 
         binding.fabAddItem.setOnClickListener {
-            showCrudDialog(null) // Pass null for Add operation
+            showCrudDialog(null)
         }
     }
 
