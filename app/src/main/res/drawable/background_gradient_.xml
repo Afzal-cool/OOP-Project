@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Dark modern base gradient -->
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:startColor="#0D1B2A"
+                android:centerColor="#1B263B"
+                android:endColor="#415A77"
+                android:angle="135" />
+        </shape>
+    </item>
+
+    <!-- Optional dark overlay for depth -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#22000000" /> <!-- Black with 13% opacity -->
+        </shape>
+    </item>
+
+</layer-list>

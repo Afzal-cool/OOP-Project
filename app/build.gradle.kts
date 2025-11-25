@@ -4,13 +4,13 @@ plugins {
 }
 
 android {
-    namespace = "com.posapp"
+    namespace = "com.posapp.data"
     compileSdk {
         version = release(36)
     }
 
     defaultConfig {
-        applicationId = "com.posapp"
+        applicationId = "com.posapp.data"
         minSdk = 34
         targetSdk = 36
         versionCode = 1
@@ -27,6 +27,11 @@ android {
                 "proguard-rules.pro"
             )
         }
+    }
+
+    buildFeatures {
+        dataBinding = true
+        viewBinding = true
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
